@@ -26,9 +26,13 @@ The default two-shot protocol gives two fixed examples per mode. Greedy decoding
 
 ## Observed results
 
+### Optional supervised adaptation
+
+`python sft_experiment.py --output artifacts/sft` runs a separate response-only SFT experiment on the same pinned model. It trains a rank-4 additive output-head adapter while freezing the backbone. The fixed split has 48 training, 12 validation and 12 test arithmetic tuples. Validation response loss selects among four checkpoints in a 40-step run. Six additional unit tests bring the total suite to 22. The observed adapted model matched 11/12 test answers versus 0/12 for the unadapted model under this experiment's prompt protocol. These results are **not comparable directly** to the original two-shot benchmark below, which uses different cases and prompts. See [SFT report](docs/SFT_REPORT.md) and `results/sft_metrics.json`. Generated adapter weights stay in ignored artifacts; rerun to reproduce them.
+
 Initial system-instruction protocol: 0/12 valid outputs in each mode. After a two-shot prompt revision: direct 2/12 correct, calculator 8/12 correct, with no invalid output formats. Both runs are preserved under `results/`. These are **development results on the same tiny fixed suite**, not held-out or statistically representative evidence of general reasoning improvement. See [report](docs/REPORT.md).
 
-No fine-tuning, RL, DeepSpeed, distributed training, long-horizon planning, production deployment or internal Huawei product integration is implemented. The 135M checkpoint is a compact language model, not evidence of operating large production LLMs. Calculator execution only validates syntax and computes the proposal; it does not establish semantic correctness. This is a constrained tool-use experiment, not a general autonomous agent or security-certified sandbox.
+The original evaluator performs no fine-tuning; the optional extension performs output-head-only SFT. No RL, DeepSpeed, distributed training, VLM, long-horizon planning, production deployment or internal Huawei product integration is implemented. The 135M checkpoint is a compact language model, not evidence of operating large production LLMs. Calculator execution only validates syntax and computes the proposal; it does not establish semantic correctness. This is a constrained tool-use experiment, not a general autonomous agent or security-certified sandbox.
 
 The code was developed with AI assistance; review it and describe your contribution accurately. The inactive CI template runs offline unit tests; the model download/inference experiment is explicit, not an automatic external action.
 

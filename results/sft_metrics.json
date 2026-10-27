@@ -1,0 +1,327 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "method": "response-only SFT of rank-4 additive output-head adapter; frozen backbone",
+  "train_examples": 48,
+  "validation_examples": 12,
+  "test_examples": 12,
+  "trainable_parameters": 198912,
+  "steps": 40,
+  "selected_step": 40,
+  "initial_validation_response_loss": 0.9266897638638815,
+  "selected_validation_response_loss": 0.09347500155369441,
+  "history": [
+    {
+      "step": 10,
+      "validation_response_loss": 0.4274934232234955
+    },
+    {
+      "step": 20,
+      "validation_response_loss": 0.1781348983446757
+    },
+    {
+      "step": 30,
+      "validation_response_loss": 0.1213141456246376
+    },
+    {
+      "step": 40,
+      "validation_response_loss": 0.09347500155369441
+    }
+  ],
+  "baseline": {
+    "correct": 0,
+    "cases": 12,
+    "invalid_outputs": 12,
+    "records": [
+      {
+        "input": {
+          "a": 12,
+          "b": 5,
+          "op": "+"
+        },
+        "raw_output": "12 + 5 = 17",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 9,
+          "b": 10,
+          "op": "*"
+        },
+        "raw_output": "9 * 10 = 90\n\nThe <calc>expression</calc> is 90.",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 11,
+          "b": 2,
+          "op": "+"
+        },
+        "raw_output": "11 + 2 = 13",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 11,
+          "b": 7,
+          "op": "*"
+        },
+        "raw_output": "11 * 7 = 78",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 7,
+          "b": 4,
+          "op": "+"
+        },
+        "raw_output": "7 + 4 = 11",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 4,
+          "b": 5,
+          "op": "+"
+        },
+        "raw_output": "4 + 5 = 9",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 6,
+          "b": 2,
+          "op": "*"
+        },
+        "raw_output": "6 * 2 is a mathematical operation that can be represented as 6 * 2.",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 10,
+          "b": 10,
+          "op": "*"
+        },
+        "raw_output": "10 * 10 = 100",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 3,
+          "b": 9,
+          "op": "*"
+        },
+        "raw_output": "3 * 9 = 27",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 8,
+          "b": 6,
+          "op": "*"
+        },
+        "raw_output": "To calculate 8 * 6, you can use the following formula:\n\n<calc>expression</calc> = <calc>expression</calc>",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 2,
+          "b": 3,
+          "op": "+"
+        },
+        "raw_output": "2 + 3 = 5",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 1,
+          "b": 2,
+          "op": "+"
+        },
+        "raw_output": "1 + 2 = 3",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      }
+    ]
+  },
+  "adapted": {
+    "correct": 11,
+    "cases": 12,
+    "invalid_outputs": 1,
+    "records": [
+      {
+        "input": {
+          "a": 12,
+          "b": 5,
+          "op": "+"
+        },
+        "raw_output": "<calc>12+5</calc>",
+        "prediction": 17,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 9,
+          "b": 10,
+          "op": "*"
+        },
+        "raw_output": "<calc><+><*><*><*><*><*><*><*><*><*",
+        "prediction": null,
+        "correct": false,
+        "status": "invalid_output",
+        "error": "invalid tool format"
+      },
+      {
+        "input": {
+          "a": 11,
+          "b": 2,
+          "op": "+"
+        },
+        "raw_output": "<calc>11+2</calc>",
+        "prediction": 13,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 11,
+          "b": 7,
+          "op": "*"
+        },
+        "raw_output": "<calc>11*7</calc>",
+        "prediction": 77,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 7,
+          "b": 4,
+          "op": "+"
+        },
+        "raw_output": "<calc>7+4</calc>",
+        "prediction": 11,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 4,
+          "b": 5,
+          "op": "+"
+        },
+        "raw_output": "<calc>4+5</calc>",
+        "prediction": 9,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 6,
+          "b": 2,
+          "op": "*"
+        },
+        "raw_output": "<calc>6*2</calc>",
+        "prediction": 12,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 10,
+          "b": 10,
+          "op": "*"
+        },
+        "raw_output": "<calc>10*10</calc>",
+        "prediction": 100,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 3,
+          "b": 9,
+          "op": "*"
+        },
+        "raw_output": "<calc>3*9</calc>",
+        "prediction": 27,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 8,
+          "b": 6,
+          "op": "*"
+        },
+        "raw_output": "<calc>8*6</calc>",
+        "prediction": 48,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 2,
+          "b": 3,
+          "op": "+"
+        },
+        "raw_output": "<calc>2+3</calc>",
+        "prediction": 5,
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "input": {
+          "a": 1,
+          "b": 2,
+          "op": "+"
+        },
+        "raw_output": "<calc>1+2</calc>",
+        "prediction": 3,
+        "correct": true,
+        "status": "correct"
+      }
+    ]
+  },
+  "limitations": [
+    "Small templated arithmetic data; exact tuples disjoint but vocabulary and grammar shared.",
+    "No VLM, image inputs, full-model fine-tuning, attention-layer LoRA, RL or preference optimization.",
+    "Single seed, short run, tiny test set; not a general reasoning or adaptation benchmark."
+  ]
+}

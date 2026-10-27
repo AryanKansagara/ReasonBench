@@ -1,0 +1,293 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "protocol": "two-shot-v1",
+  "execution": "CPU, greedy decoding, 48 new tokens maximum",
+  "tool_budget": 1,
+  "summary": {
+    "direct": {
+      "cases": 12,
+      "correct": 2,
+      "invalid_outputs": 0,
+      "generation_seconds": 1.1714069581357762
+    },
+    "calculator": {
+      "cases": 12,
+      "correct": 8,
+      "invalid_outputs": 0,
+      "generation_seconds": 2.600260206963867
+    }
+  },
+  "records": [
+    {
+      "id": "add",
+      "question": "What is 17 + 26?",
+      "answer": 43,
+      "mode": "direct",
+      "raw_output": "19",
+      "generation_seconds": 0.13353379105683416,
+      "prediction": 19,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "subtract",
+      "question": "What is 91 - 38?",
+      "answer": 53,
+      "mode": "direct",
+      "raw_output": "10",
+      "generation_seconds": 0.08470037498045713,
+      "prediction": 10,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "multiply",
+      "question": "What is 13 * 7?",
+      "answer": 91,
+      "mode": "direct",
+      "raw_output": "10",
+      "generation_seconds": 0.08542650006711483,
+      "prediction": 10,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "divide",
+      "question": "What is 144 / 12?",
+      "answer": 12,
+      "mode": "direct",
+      "raw_output": "12",
+      "generation_seconds": 0.08839020796585828,
+      "prediction": 12,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "precedence",
+      "question": "What is 8 + 6 * 4?",
+      "answer": 32,
+      "mode": "direct",
+      "raw_output": "10",
+      "generation_seconds": 0.09386970894411206,
+      "prediction": 10,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "parentheses",
+      "question": "What is (19 + 5) * 3?",
+      "answer": 72,
+      "mode": "direct",
+      "raw_output": "19",
+      "generation_seconds": 0.10043058404698968,
+      "prediction": 19,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "negative",
+      "question": "What is 12 - 29?",
+      "answer": -17,
+      "mode": "direct",
+      "raw_output": "19",
+      "generation_seconds": 0.09548533393535763,
+      "prediction": 19,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "combined",
+      "question": "What is (84 - 12) / 6?",
+      "answer": 12,
+      "mode": "direct",
+      "raw_output": "12",
+      "generation_seconds": 0.1211868750397116,
+      "prediction": 12,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "items",
+      "question": "There are 7 boxes with 9 pens each. How many pens total?",
+      "answer": 63,
+      "mode": "direct",
+      "raw_output": "12",
+      "generation_seconds": 0.0934301660163328,
+      "prediction": 12,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "remaining",
+      "question": "A shop has 80 apples and sells 23. How many apples remain?",
+      "answer": 57,
+      "mode": "direct",
+      "raw_output": "12",
+      "generation_seconds": 0.09724300005473197,
+      "prediction": 12,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "cost",
+      "question": "Four tickets cost 15 dollars each. What is their total cost in dollars?",
+      "answer": 60,
+      "mode": "direct",
+      "raw_output": "15",
+      "generation_seconds": 0.099152332986705,
+      "prediction": 15,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "sharing",
+      "question": "Sixty candies are shared equally among 5 children. How many candies per child?",
+      "answer": 12,
+      "mode": "direct",
+      "raw_output": "10",
+      "generation_seconds": 0.07855808304157108,
+      "prediction": 10,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "add",
+      "question": "What is 17 + 26?",
+      "answer": 43,
+      "mode": "calculator",
+      "raw_output": "<calc>17+26</calc>",
+      "generation_seconds": 0.23995541594922543,
+      "prediction": 43,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "subtract",
+      "question": "What is 91 - 38?",
+      "answer": 53,
+      "mode": "calculator",
+      "raw_output": "<calc>91-38</calc>",
+      "generation_seconds": 0.2588074579834938,
+      "prediction": 53,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "multiply",
+      "question": "What is 13 * 7?",
+      "answer": 91,
+      "mode": "calculator",
+      "raw_output": "<calc>13*7</calc>",
+      "generation_seconds": 0.20352954103145748,
+      "prediction": 91,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "divide",
+      "question": "What is 144 / 12?",
+      "answer": 12,
+      "mode": "calculator",
+      "raw_output": "<calc>144 / 12</calc>",
+      "generation_seconds": 0.2526070000603795,
+      "prediction": 12,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "precedence",
+      "question": "What is 8 + 6 * 4?",
+      "answer": 32,
+      "mode": "calculator",
+      "raw_output": "<calc>8+6*4</calc>",
+      "generation_seconds": 0.2135188749525696,
+      "prediction": 32,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "parentheses",
+      "question": "What is (19 + 5) * 3?",
+      "answer": 72,
+      "mode": "calculator",
+      "raw_output": "<calc>19+5*3</calc>",
+      "generation_seconds": 0.21349316707346588,
+      "prediction": 34,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "negative",
+      "question": "What is 12 - 29?",
+      "answer": -17,
+      "mode": "calculator",
+      "raw_output": "<calc>12-29</calc>",
+      "generation_seconds": 0.19976583297830075,
+      "prediction": -17,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "combined",
+      "question": "What is (84 - 12) / 6?",
+      "answer": 12,
+      "mode": "calculator",
+      "raw_output": "<calc>84 - 12</calc>",
+      "generation_seconds": 0.23586874990724027,
+      "prediction": 72,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "items",
+      "question": "There are 7 boxes with 9 pens each. How many pens total?",
+      "answer": 63,
+      "mode": "calculator",
+      "raw_output": "<calc>7*9</calc>",
+      "generation_seconds": 0.1854653749614954,
+      "prediction": 63,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "remaining",
+      "question": "A shop has 80 apples and sells 23. How many apples remain?",
+      "answer": 57,
+      "mode": "calculator",
+      "raw_output": "<calc>80*23</calc>",
+      "generation_seconds": 0.20570212497841567,
+      "prediction": 1840,
+      "correct": false,
+      "status": "wrong_answer"
+    },
+    {
+      "id": "cost",
+      "question": "Four tickets cost 15 dollars each. What is their total cost in dollars?",
+      "answer": 60,
+      "mode": "calculator",
+      "raw_output": "<calc>15*4</calc>",
+      "generation_seconds": 0.19490633299574256,
+      "prediction": 60,
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "id": "sharing",
+      "question": "Sixty candies are shared equally among 5 children. How many candies per child?",
+      "answer": 12,
+      "mode": "calculator",
+      "raw_output": "<calc>6*5</calc>",
+      "generation_seconds": 0.1966403340920806,
+      "prediction": 30,
+      "correct": false,
+      "status": "wrong_answer"
+    }
+  ],
+  "limitations": [
+    "12 fixed arithmetic cases, not a representative reasoning benchmark.",
+    "No fine-tuning, training, DeepSpeed, multi-step planning or external tool access.",
+    "Strict format parsing can mark a numerically correct verbose response invalid.",
+    "The calculator only checks syntax and computes the proposed expression; semantic correctness uses gold answers offline."
+  ]
+}
